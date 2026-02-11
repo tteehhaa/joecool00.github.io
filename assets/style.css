@@ -105,11 +105,20 @@ main {
 }
 
 footer {
-    padding: 40px 0;
+    padding: 60px 0 40px;
     text-align: center;
     color: var(--text-muted);
     font-size: 0.8rem;
     opacity: 0.6;
+}
+
+.author-bio {
+    font-size: 0.75rem;
+    opacity: 0.4;
+    max-width: 500px;
+    margin: 0 auto 16px;
+    line-height: 1.6;
+    font-weight: 300;
 }
 
 @media (max-width: 600px) {
