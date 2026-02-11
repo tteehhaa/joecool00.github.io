@@ -74,6 +74,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    cursor: pointer;
 }
 
 .post-card:hover {
