@@ -152,7 +152,7 @@ def generate_html(posts):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>소담의 AI Mind</title>
-    <meta name="description" content="소담의 AI Mind: 네이버 블로그의 핵심 인공지능 인사이트를 보관합니다.">
+    <meta name="description" content="인공지능과 비즈니스의 융합을 연구하며 전문적인 기술-법률적 통찰을 기록합니다.">
     <link rel="stylesheet" href="assets/style.css">
     <script type="application/ld+json">
 {json_ld_html}
