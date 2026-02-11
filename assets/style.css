@@ -1,9 +1,9 @@
 :root {
-    --primary: #2563eb;
-    --primary-light: #e0f2fe;
-    --bg: #f8fafc;
-    --text-main: #1e293b;
-    --text-muted: #64748b;
+    --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    --bg-gradient: linear-gradient(180deg, #f8fafc 0%, #eff6ff 100%);
+    --primary-soft: #dbeafe;
+    --text-main: #0f172a;
+    --text-muted: #475569;
     --card-bg: #ffffff;
     --border: #e2e8f0;
     --container-width: 800px;
@@ -16,72 +16,83 @@
 }
 
 body {
-    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: var(--bg);
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
     color: var(--text-main);
-    line-height: 1.6;
+    line-height: 1.5;
     word-break: keep-all;
+    min-height: 100vh;
 }
 
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 16px;
 }
 
 header {
-    background-color: var(--card-bg);
-    padding: 60px 0 40px;
-    border-bottom: 1px solid var(--border);
+    background: transparent;
+    padding: 40px 0 30px;
     text-align: center;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 800;
-    color: var(--primary);
-    margin-bottom: 10px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
 }
 
 .subtitle {
     color: var(--text-muted);
-    font-size: 1.1rem;
+    font-size: 1rem;
+    opacity: 0.8;
 }
 
 main {
-    padding: 40px 0;
+    padding: 20px 0 60px;
 }
 
 .post-grid {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
+    /* Reduced gap */
 }
 
 .post-card {
     background: var(--card-bg);
-    padding: 30px;
-    border-radius: 16px;
+    padding: 20px 24px;
+    /* More compact padding */
+    border-radius: 12px;
     border: 1px solid var(--border);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .post-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-    border-color: var(--primary);
+    box-shadow: 0 12px 20px -5px rgba(37, 99, 235, 0.1);
+    border-color: #3b82f6;
 }
 
 .post-date {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
-    margin-bottom: 8px;
+    font-weight: 500;
 }
 
 .post-title {
-    font-size: 1.4rem;
-    margin-bottom: 16px;
+    font-size: 1.25rem;
+    /* Slightly smaller for density */
+    margin: 0;
+    line-height: 1.4;
 }
 
 .post-title a {
@@ -91,58 +102,46 @@ main {
 }
 
 .post-title a:hover {
-    color: var(--primary);
+    color: #2563eb;
 }
 
 .post-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 4px;
 }
 
 .category-tag {
-    background-color: var(--primary-light);
-    color: var(--primary);
-    padding: 4px 12px;
-    border-radius: 9999px;
-    font-size: 0.85rem;
+    background-color: var(--primary-soft);
+    color: #1d4ed8;
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
     font-weight: 600;
 }
 
 .read-more {
-    font-size: 0.9rem;
-    color: var(--primary);
+    font-size: 0.85rem;
+    color: #2563eb;
     text-decoration: none;
     font-weight: 600;
 }
 
-.read-more:hover {
-    text-decoration: underline;
-}
-
 footer {
-    padding: 60px 0;
+    padding: 40px 0;
     text-align: center;
     color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: var(--primary);
-    text-decoration: none;
+    font-size: 0.85rem;
+    opacity: 0.7;
 }
 
 @media (max-width: 600px) {
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
+
     .post-card {
-        padding: 20px;
-    }
-    .post-footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+        padding: 16px;
     }
 }

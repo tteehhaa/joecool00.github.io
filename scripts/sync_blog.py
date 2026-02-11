@@ -145,7 +145,7 @@ def generate_html(posts):
     json_ld_html = json.dumps({
         "@context": "https://schema.org",
         "@type": "Blog",
-        "name": f"{BLOG_ID}'s AI Mind",
+        "name": "킹콩노트의 AI Mind",
         "url": f"https://{BLOG_ID}.github.io/",
         "blogPost": json_ld_items
     }, ensure_ascii=False, indent=2)
@@ -155,7 +155,7 @@ def generate_html(posts):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{BLOG_ID} - AI Mind Bridge</title>
+    <title>킹콩노트의 AI Mind</title>
     <meta name="description" content="네이버 블로그 {BLOG_ID}의 AI Mind 카테고리 글들을 AI 검색 엔진에 최적화하여 제공합니다.">
     <link rel="stylesheet" href="assets/style.css">
     <script type="application/ld+json">
@@ -165,8 +165,8 @@ def generate_html(posts):
 <body>
     <header>
         <div class="container">
-            <h1>AI Mind Bridge</h1>
-            <p class="subtitle">{BLOG_ID} 네이버 블로그의 인공지능 통찰을 AI 검색을 위해 브릿징합니다.</p>
+            <h1>킹콩노트의 AI Mind</h1>
+            <p class="subtitle">네이버 블로그의 인공지능 인사이트를 정제하여 보관합니다.</p>
         </div>
     </header>
     <main class="container">
