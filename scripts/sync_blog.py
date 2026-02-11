@@ -172,7 +172,7 @@ def generate_html(posts):
     </main>
     <footer>
         <div class="container">
-            <p class="author-bio">Tech-Sector Specialist | NY-Qualified Attorney | Seoul, Korea. 인공지능과 비즈니스의 융합을 연구하며 전문적인 기술-법률적 통찰을 기록하는 소담-킹콩노트의 데이터 아카이브입니다.</p>
+            <p class="author-bio">Tech-Legal Specialist | NY-Qualified Attorney | Seoul, Korea. 인공지능과 비즈니스의 융합을 연구하며 전문적인 기술-법률적 통찰을 기록합니다.</p>
             <p>&copy; 2026 {BLOG_ID}. All rights reserved. <a href="https://blog.naver.com/{BLOG_ID}">원본 블로그 바로가기</a></p>
         </div>
     </footer>
