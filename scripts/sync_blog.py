@@ -27,8 +27,12 @@ def parse_rss(xml_content):
         category = item.find("category").text if item.find("category") is not None else ""
         pub_date = item.find("pubDate").text
         
-        # Extract post ID from link
-        post_id = link.split("/")[-1]
+        # Extract post ID from link and strip any query parameters
+        # Naver link format: https://blog.naver.com/joecool00/224179736852?fromRss=true...
+        post_id = link.split("/")[-1].split("?")[0]
+        
+        # Clean the link itself for consistency
+        clean_link = f"https://m.blog.naver.com/{BLOG_ID}/{post_id}"
         
         try:
             date_obj = datetime.strptime(pub_date, "%a, %d %b %Y %H:%M:%S %z")
@@ -39,7 +43,7 @@ def parse_rss(xml_content):
         items.append({
             "id": post_id,
             "title": title,
-            "link": link.replace("blog.naver.com", "m.blog.naver.com"),
+            "link": clean_link,
             "category": category,
             "date": formatted_date
         })
