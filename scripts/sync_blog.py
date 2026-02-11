@@ -141,8 +141,8 @@ def generate_html(posts):
     json_ld_html = json.dumps({
         "@context": "https://schema.org",
         "@type": "Blog",
-        "name": "소담의 AI Mind",
-        "url": f"https://{BLOG_ID}.github.io/",
+        "name": "Sony's AI Mind Archive (Seoul Proxy)",
+        "url": "https://seoulproxy.com/",
         "blogPost": json_ld_items
     }, ensure_ascii=False, indent=2)
 
@@ -182,6 +182,19 @@ def generate_html(posts):
     with open(HTML_FILE, "w", encoding="utf-8") as f:
         f.write(html_template)
 
+def generate_sitemap(posts):
+    base_url = "https://seoulproxy.com/"
+    sitemap_content = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>{base_url}</loc>
+        <lastmod>{datetime.now().strftime('%Y-%m-%d')}</lastmod>
+        <priority>1.0</priority>
+    </url>
+</urlset>"""
+    with open("sitemap.xml", "w", encoding="utf-8") as f:
+        f.write(sitemap_content)
+
 if __name__ == "__main__":
     print("Starting sync...")
     xml_data = fetch_rss()
@@ -189,4 +202,5 @@ if __name__ == "__main__":
         items = parse_rss(xml_data)
         all_posts = update_data(items)
         generate_html(all_posts)
+        generate_sitemap(all_posts)
         print("Sync completed successfully.")
