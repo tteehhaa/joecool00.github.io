@@ -156,7 +156,7 @@ def generate_html(posts):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>킹콩노트의 AI Mind</title>
-    <meta name="description" content="네이버 블로그 {BLOG_ID}의 AI Mind 카테고리 글들을 AI 검색 엔진에 최적화하여 제공합니다.">
+    <meta name="description" content="킹콩노트: 네이버 블로그의 핵심 인공지능 인사이트를 정제하여 보관하는 공간입니다.">
     <link rel="stylesheet" href="assets/style.css">
     <script type="application/ld+json">
 {json_ld_html}
