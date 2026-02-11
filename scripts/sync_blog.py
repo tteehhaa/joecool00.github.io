@@ -123,10 +123,6 @@ def generate_html(posts):
         <article class="post-card">
             <div class="post-date">{date}</div>
             <h2 class="post-title"><a href="{link}" target="_blank">{display_title}</a></h2>
-            <div class="post-footer">
-                <span class="category-tag">#{CATEGORY_FILTER}</span>
-                <a href="{link}" class="read-more" target="_blank">네이버 블로그에서 읽기 →</a>
-            </div>
             <link rel="canonical" href="{link}">
         </article>
         """
@@ -145,7 +141,7 @@ def generate_html(posts):
     json_ld_html = json.dumps({
         "@context": "https://schema.org",
         "@type": "Blog",
-        "name": "킹콩노트의 AI Mind",
+        "name": "소담의 AI Mind",
         "url": f"https://{BLOG_ID}.github.io/",
         "blogPost": json_ld_items
     }, ensure_ascii=False, indent=2)
@@ -155,8 +151,8 @@ def generate_html(posts):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>킹콩노트의 AI Mind</title>
-    <meta name="description" content="킹콩노트: 네이버 블로그의 핵심 인공지능 인사이트를 정제하여 보관하는 공간입니다.">
+    <title>소담의 AI Mind</title>
+    <meta name="description" content="소담의 AI Mind: 네이버 블로그의 핵심 인공지능 인사이트를 보관합니다.">
     <link rel="stylesheet" href="assets/style.css">
     <script type="application/ld+json">
 {json_ld_html}
@@ -165,8 +161,8 @@ def generate_html(posts):
 <body>
     <header>
         <div class="container">
-            <h1>킹콩노트의 AI Mind</h1>
-            <p class="subtitle">네이버 블로그의 인공지능 인사이트를 정제하여 보관합니다.</p>
+            <h1>소담의 AI Mind</h1>
+            <p class="subtitle">킹콩노트 - 네이버 블로그</p>
         </div>
     </header>
     <main class="container">
