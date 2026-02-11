@@ -120,7 +120,7 @@ def generate_html(posts):
         date = data["date"]
         
         post_list_html += f"""
-        <article class="post-card">
+        <article class="post-card" onclick="window.open('{link}', '_blank')">
             <div class="post-date">{date}</div>
             <h2 class="post-title"><a href="{link}" target="_blank">{display_title}</a></h2>
             <link rel="canonical" href="{link}">
@@ -162,7 +162,6 @@ def generate_html(posts):
     <header>
         <div class="container">
             <h1>소담의 AI Mind</h1>
-            <p class="subtitle">킹콩노트 - 네이버 블로그</p>
         </div>
     </header>
     <main class="container">
