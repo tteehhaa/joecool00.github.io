@@ -74,7 +74,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    cursor: pointer;
 }
 
 .post-card:hover {
@@ -103,6 +102,25 @@ main {
 
 .post-title a:hover {
     color: #2563eb;
+}
+
+/* 새로 추가된 요약 텍스트 및 CTA 버튼 스타일 */
+.post-summary {
+    color: #555;
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: 600;
+    color: #0070f3;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
 }
 
 footer {
