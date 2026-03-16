@@ -101,6 +101,18 @@ def clean_title(title):
             
     return cleaned
 
+def generate_summary(title):
+    if "데이터센터" in title:
+        return "AI 인프라와 데이터센터 전력 문제를 분석한 글"
+    elif "법" in title or "규제" in title:
+        return "AI 규제와 법적 리스크를 설명한 분석 글"
+    elif "투자" in title:
+        return "AI 시장과 투자 흐름을 정리한 글"
+    elif "AI" in title:
+        return "AI 기술과 비즈니스 영향에 대한 인사이트"
+    else:
+        return "AI 기술과 비즈니스 변화에 대한 분석 글"
+
 def generate_html(posts):
     def sort_key(item):
         date = item[1].get("date", "0000-00-00")
@@ -118,11 +130,14 @@ def generate_html(posts):
         display_title = clean_title(original_title)
         link = data["link"]
         date = data["date"]
+        summary = generate_summary(original_title)
         
         post_list_html += f"""
-        <article class="post-card" onclick="window.open('{link}', '_blank')">
+        <article class="post-card">
             <div class="post-date">{date}</div>
             <h2 class="post-title"><a href="{link}" target="_blank">{display_title}</a></h2>
+            <p class="post-summary">{summary}</p>
+            <a href="{link}" class="read-more" target="_blank">원문 읽기 &rarr;</a>
             <link rel="canonical" href="{link}">
         </article>
         """
@@ -149,7 +164,6 @@ def generate_html(posts):
     html_template = f"""<!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WTHX05VQS2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
