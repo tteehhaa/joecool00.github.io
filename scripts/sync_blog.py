@@ -102,16 +102,28 @@ def clean_title(title):
     return cleaned
 
 def generate_summary(title):
-    if "데이터센터" in title:
-        return "AI 인프라와 데이터센터 전력 문제를 분석한 글"
-    elif "법" in title or "규제" in title:
-        return "AI 규제와 법적 리스크를 설명한 분석 글"
-    elif "투자" in title:
-        return "AI 시장과 투자 흐름을 정리한 글"
-    elif "AI" in title:
-        return "AI 기술과 비즈니스 영향에 대한 인사이트"
+    # 소문자로 변환하여 영어 키워드 검색 효율을 높임
+    t = title.lower()
+    
+    if "데이터" in t or "전력" in t or "인프라" in t:
+        return "폭발적으로 성장하는 AI 산업 이면의 인프라 구축과 전력 공급 이슈를 짚어봅니다."
+    elif "법" in t or "규제" in t or "pipa" in t or "권리장전" in t or "컴플라이언스" in t:
+        return "급변하는 기술 환경 속에서 반드시 알아야 할 법적 규제와 리스크 대응 방안을 살펴봅니다."
+    elif "투자" in t or "주식" in t or "시장" in t:
+        return "글로벌 AI 시장의 자본 흐름과 비즈니스 기회, 투자 관점의 핵심 포인트를 분석합니다."
+    elif "코딩" in t or "lovable" in t or "개발" in t or "에이전트" in t:
+        return "AI 코딩 에이전트와 노코드 툴을 활용한 새로운 개발 트렌드와 생생한 실전 팁을 공유합니다."
+    elif "자격증" in t or "교육" in t or "essential" in t or "training" in t:
+        return "AI 역량을 증명하고 실력을 한 단계 높일 수 있는 유용한 글로벌 교육 과정과 자격증 정보를 소개합니다."
+    elif "rag" in t or "llm" in t or "프롬프트" in t:
+        return "생성형 AI의 성능을 극대화하는 핵심 기술의 개념과 실무 적용 노하우를 다룹니다."
+    elif "퍼플렉시티" in t or "제미나이" in t or "chatgpt" in t or "툴" in t or "옵시디언" in t or "안티그래비티" in t:
+        return "생산성을 획기적으로 높여주는 최신 AI 서비스들의 특징과 실제 업무 활용기를 전해드립니다."
+    elif "일자리" in t or "대체" in t or "시대" in t or "트렌드" in t:
+        return "인공지능이 가져올 직업 환경의 변화와 우리가 준비해야 할 미래 생존 전략을 고민해 봅니다."
     else:
-        return "AI 기술과 비즈니스 변화에 대한 분석 글"
+        # 키워드에 안 걸리는 일반적인 글일 경우
+        return "테크-리걸 전문가의 시선으로 바라본 인공지능과 비즈니스 융합에 대한 깊이 있는 생각을 나눕니다."
 
 def generate_html(posts):
     def sort_key(item):
