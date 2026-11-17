@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Seoul Proxy — 새 사이트 준비 중</title>
-<meta name="description" content="AI가 대신하는 세상에서, 사람의 몫을 지키는 법. 새 사이트를 준비하고 있어요.">
+<meta name="description" content="Seoul Proxy 새 사이트를 준비하고 있어요. “우리는 아주 가까운 앞날밖에 내다보지 못하지만, 거기서도 해야 할 일은 얼마든지 보인다.” — 앨런 튜링">
 <link rel="canonical" href="https://seoulproxy.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://seoulproxy.com/">
 <meta property="og:title" content="Seoul Proxy — 새 사이트 준비 중">
-<meta property="og:description" content="AI가 대신하는 세상에서, 사람의 몫을 지키는 법.">
+<meta property="og:description" content="“우리는 아주 가까운 앞날밖에 내다보지 못하지만, 거기서도 해야 할 일은 얼마든지 보인다.” — 앨런 튜링">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F0F0F'/%3E%3Cpath d='M16 7v9l6 4' stroke='%23F0F0F0' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <meta name="theme-color" content="#F0F0F0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0F0F0F" media="(prefers-color-scheme: dark)">
@@ -89,6 +89,15 @@
     letter-spacing: -0.02em;
     word-break: keep-all;
   }
+  .quote { display: flex; flex-direction: column; gap: 14px; }
+  .cite {
+    margin: 0;
+    max-width: 44em;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .cite cite { font-style: italic; }
+  .cite .by { display: block; }
 
   .bottom { padding-top: 20px; border-top: 1px solid var(--ink); }
   .bottom .coord { font-variant-numeric: tabular-nums; }
@@ -123,7 +132,10 @@
     <p class="zone muted kr"><span>지금 서울은</span><span class="tz">KST · UTC+9</span></p>
     <p class="clock"><time id="clock">--:--:--</time></p>
     <div class="ticks" id="ticks" aria-hidden="true"></div>
-    <h1>AI가 대신하는 세상에서, 사람의 몫을 지키는 법.</h1>
+    <div class="quote">
+      <h1>우리는 아주 가까운 앞날밖에 내다보지 못하지만, 거기서도 해야 할 일은 얼마든지 보인다.</h1>
+      <p class="cite muted" lang="en">“We can only see a short distance ahead, but we can see plenty there that needs to be done.”<span class="by">— Alan Turing, <cite>Computing Machinery and Intelligence</cite>, 1950</span></p>
+    </div>
   </main>
 
   <footer class="bottom">
