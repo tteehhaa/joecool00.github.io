@@ -1,0 +1,7 @@
+# 비밀값 (API 키 등) — .env.example은 공유용이라 제외하지 않음
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
